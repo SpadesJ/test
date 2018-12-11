@@ -1,0 +1,26 @@
+.header {
+	height: 55px;
+	background: #333;
+}
+.main {
+	display: -webkit-flex;
+	display: flex;
+}
+.main .left, .main .right {
+	width: 200px;
+	height: 400px;
+	background: red;
+}
+.main .right {
+	background: yellow;
+}
+.main .middle {
+	height: 400px;
+	background: #27ccff;
+    -webkit-flex: 1;
+    flex: 1;
+}
+.footer {
+	height: 100px;
+	background: #333;
+}
