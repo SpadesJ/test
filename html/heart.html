@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+<title>bengbengbeng</title>
+<style>
+	* {
+		margin: 0;
+		padding: 0;
+	}
+	body {
+		background-color: #fff8fb;
+	}
+	.text {
+		margin-top: 10px;
+		text-align: center;
+		font-size: 16px;
+		color: #ff7171;
+	}
+	.textbeng {
+		font-size: 30px;
+   		font-weight: 600;
+	}
+	.heart {
+		animation:heartbeat 1s infinite;
+		-webkit-animation: heartbeat 1s infinite;
+		width: 198px;
+		height: 198px;
+		background: #f00;
+		position: absolute;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		right: 0;
+		margin: auto;
+		filter: drop-shadow(0px 0px 20px rgb(255,20,20));
+		transform: rotate(45deg);
+	}
+	.heart:before,.heart:after {
+		content:"";
+		position:absolute;
+		width:200px;
+		height:200px;
+		background:#f00;
+		border-radius:100px;
+	}
+	.heart:before {
+		left:-100px;
+	}
+	.heart:after {
+		left:0;
+		top:-100px;
+	}
+	@keyframes heartbeat {
+		0% {
+			transform:rotate(45deg) scale(0.8,0.8);
+			opacity:1;
+		}
+		25% {
+			transform:rotate(45deg) scale(1,1);
+			opacity:0.8;
+		}
+		100% {
+			transform:rotate(45deg) scale(0.8,0.8);
+			opacity:1;
+		}
+	}
+</style>
+
+</head>
+<body>
+	<p class="text">咖喱给给</p>
+	<p class="text textbeng">嘣 嘣 嘣</p>
+	<div class="heart"></div>
+</body>
+</html>
