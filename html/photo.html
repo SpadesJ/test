@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+	<title>Surprise</title>
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+		}
+		html, body {
+			width: 100%;
+			height: 100%;
+			overflow: hidden;
+			-webkit-touch-callout: none;
+			-webkit-user-select: none;
+			-khtml-user-select: none;
+			-moz-user-select: none;
+			-ms-user-select: none;
+			user-select: none;
+		}
+		.timer {
+			width: 100%;
+			height: 100%;
+			position: relative;
+		}
+		.timer span {
+		    width: 100%;
+		    height: 200px;
+		    line-height: 200px;
+		    position: absolute;
+		    top: 0;
+		    bottom: 0;
+		    margin: auto;
+		    text-align: center;
+			font-size: 32px;
+			font-weight: 700;
+		}
+		i.font100 {
+			font-style: normal;
+			font-size: 100px;
+		}
+		.photo {
+			display: none;
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			top: 0;
+			left: 0;
+			overflow: hidden;
+		}
+		.photo img {
+			max-width: 100%;
+		    max-height: 100%;
+		    position: absolute;
+		    top: 0;
+		    left: 0;
+		    bottom: 0;
+		    right: 0;
+		    margin: auto;
+			animation: tada 1s ease both;
+		    -webkit-animation: tada 1s ease both;
+		}
+		@keyframes tada {
+		    0%{transform:scale(1);}
+		    10%,20%{transform:scale(0.8) rotate(-4deg);}
+		    30%,50%,70%,90%{transform:scale(1.2) rotate(4deg);}
+		    40%,60%,80%{transform:scale(1.2) rotate(-4deg);}
+		    100%{transform:scale(1) rotate(0);}
+		}
+		@-webkit-keyframes tada {
+		    0%{-webkit-transform:scale(1);}
+		    10%,20%{-webkit-transform:scale(0.8) rotate(-4deg);}
+		    30%,50%,70%,90%{-webkit-transform:scale(1.2) rotate(4deg);}
+		    40%,60%,80%{-webkit-transform:scale(1.2) rotate(-4deg);}
+		    100%{-webkit-transform:scale(1) rotate(0);}
+		}
+	</style>
+</head>
+<body>
+	<div class="timer"><span>ARE YOU READY?</span></div>
+	<div class="photo">
+		<img src="../images/photo/hahaha.jpg" alt="">
+	</div>
+</body>
+<script src="https://libs.baidu.com/jquery/2.1.4/jquery.min.js"></script>
+<script>
+	$(function() {
+		setTimeout(function(){
+			var count = 6;
+			var timer = setInterval(function(){
+				count--;
+				$(".timer span").html('<i class="font100">'+ count +'</i>');
+				if (count <= 0) {
+					clearInterval(timer);
+					$(".photo").show();
+					setTimeout(function(){
+						$(".photo").fadeOut();
+					}, 1000)
+					$(".timer span").html("哈哈哈哈！")
+				}
+			}, 1000);
+		}, 2000);
+	});
+</script>
+</html>
